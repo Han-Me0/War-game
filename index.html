@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="container"></div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Battleship War</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+  <body>
+    <div id="splash-screen">
+      <h1>The Battleship War Game</h1>
+      <button id="start-btn">Start</button>
+    </div>
+    <div id="game-screen">
+      <h1>The Battleship War Game</h1>
+      <span id="num-row">1  2  3  4  5  6  7  8 9 10 11 12 13 14 15 16 17 18 19 20</span>
+      <ol>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+      </ol>
+      <div id="game-board" class="boardsArray"></div>
+      <button id="try-again-btn">Try Again</button>
+    </div>
+    <div id="gameover-screen">
+      <h1>Battleship War is over!</h1>
+      
+    </div>
+    <script src="index.js"></script>
+  </body>
 </html>

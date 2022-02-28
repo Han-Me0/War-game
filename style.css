@@ -1,0 +1,81 @@
+body {
+    background-image: url(./images/sea.png);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  h1 {
+    color: rgb(228, 228, 228);
+    font-size: 4rem;
+    background-color: rgba(17, 17, 98, 0.397);
+    border-radius: 10px;
+  }
+  .boardsArray {
+    position: relative;
+    margin-top: 20px;
+    padding: 0px;
+    width: 760px;
+    height: 354px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #try-again-btn, #start-btn {
+    margin-top: 40px;
+    width: 166px;
+    height: 36px;
+    font-size: 1.2rem;
+    border-radius: 40px;
+    color: rgb(113, 78, 19);
+    font-weight: 500;
+  }
+
+  #try-again-btn:hover, #start-btn:hover {
+      background-color: honeydew;
+  }
+
+  span {
+    position: absolute;
+    z-index: 3;
+    font-size: 27px;
+    font-weight: 600;
+    margin-left: -270px;
+    margin-top: -26px;
+  }
+
+   ol {
+    position: absolute;
+    font-size: 27px;
+    list-style: none;
+    margin-left: -69px;
+    font-weight: 600;
+    margin-top: 10px;
+   }
+
+   li {
+       margin-bottom: 8px;
+   }
+
+  .square {
+    margin: 0px;
+    padding: 0px;
+    width: 35px;
+    height: 35px;
+    background-color: rgb(195, 206, 212);
+    border: 1px solid grey;
+  }
+  .square:hover {
+    background-color: rgb(231, 222, 207);
+  }
+  
+   .hit {
+  background-color: crimson;
+  }
+
+  .miss{
+  background-color: grey;
+}
