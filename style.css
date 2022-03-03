@@ -7,13 +7,31 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    cursor: url('./images/cursor.png'), default;
   }
+.overlay{
+  position: absolute;
+  z-index: 3;
+  max-width: 100%;
+  background-color: rgba(0, 0, 0,0.5);
+}
   h1 {
     color: rgb(228, 228, 228);
     font-size: 4rem;
     background-color: rgba(17, 17, 98, 0.397);
     border-radius: 10px;
+    margin-bottom: 95px;
+    margin-top: 58px;
+    margin-right: 20px;
   }
+
+  #splash-screen img{
+    border: 16px solid rgb(227, 227, 227);
+  }
+  h1 span{
+    color: rgb(203, 69, 0);
+    border: 2px solid white;
+}
   .boardsArray {
     position: relative;
     margin-top: 20px;
@@ -24,40 +42,115 @@ body {
     flex-wrap: wrap;
   }
 
-  #try-again-btn, #start-btn {
-    margin-top: 40px;
+  #gameOver-TryAgain{
+    margin-top: 35px;
     width: 166px;
     height: 36px;
-    font-size: 1.2rem;
+    margin-bottom: 70px;
+    font-size: 1.3rem;
     border-radius: 40px;
     color: rgb(113, 78, 19);
     font-weight: 500;
   }
 
-  #try-again-btn:hover, #start-btn:hover {
-      background-color: honeydew;
+  #gameOver-TryAgain:hover {
+    background-color: rgb(247, 255, 240);
   }
 
-  span {
+  #try-again-btn, #start-btn {
+    margin-top: 85px;
+    width: 166px;
+    height: 36px;
+    margin-bottom: 70px;
+    font-size: 1.3rem;
+    border-radius: 40px;
+    color: rgb(113, 78, 19);
+    font-weight: 500;
+  }
+
+  #img-splash-scr {
+      width: 500px;
+      height: auto;
+
+  }
+  #img-splash-scr > img {
+  object-fit: cover;
+  width: 1000px;
+  margin-left: -29%;
+  }
+
+  #try-again-btn:hover, #start-btn:hover {
+    background-color: rgb(247, 255, 240);
+  }
+
+  #scores {
+    position: absolute;
+    margin-left: 500px;
+    }
+
+    .Scrs h3::before {
+    content: "";
+    position: absolute;
+    z-index: 22;
+    top: 3.4rem;
+    left: 3rem;
+    border: 1.2rem solid transparent;
+    border-top-color: #e64028;
+    }
+
+    .Scrs h3 {
+    font-size: 3rem;
+    background: orangered;
+    position: absolute;
+    z-index: 6;
+    margin-left: 59%;
+    margin-top: -89px;  }
+
+    #num-row {
     position: absolute;
     z-index: 3;
-    font-size: 27px;
+    font-size: 22px;
     font-weight: 600;
-    margin-left: -270px;
+    margin-left: -372px;
     margin-top: -26px;
+    letter-spacing: 11px;
+    background-color: rgba(214, 212, 212, 0.7);
+  }
+
+  #two-dig{
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 3.2px;
+  
+  }
+
+  .two-dig{
+    position: absolute;
+    z-index: 3;
+    font-size: 22px;
+    font-weight: 600;
+    margin-left: -41px;
+    margin-top: -26px;
+    letter-spacing: 3.2px;
+    background-color: rgba(214, 212, 212, 0.7);
   }
 
    ol {
     position: absolute;
-    font-size: 27px;
+    font-size: 22px;
     list-style: none;
     margin-left: -69px;
     font-weight: 600;
-    margin-top: 10px;
+    margin-top: 9px;
+    background-color: rgba(214, 212, 212, 0.7);
+    padding: 0;
+    margin-left: -29px;
+    
    }
 
    li {
        margin-bottom: 8px;
+       padding-top: 2px;
    }
 
   .square {
@@ -67,15 +160,167 @@ body {
     height: 35px;
     background-color: rgb(195, 206, 212);
     border: 1px solid grey;
+    transition: all 0.09s;
   }
   .square:hover {
     background-color: rgb(231, 222, 207);
   }
   
    .hit {
-  background-color: crimson;
-  }
+  background: url(./images/explosion.png);
+  object-fit: cover;
+  width: 35px;
+  animation: fadeIn 15s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;
+
+ }
+
+  .trans {
+  transform: scale(1.2);
+  border: 3px solid rgb(255, 255, 6);
+  box-shadow: 0px 0px 20px rgb(255, 255, 6);
+
+ 
+      }
+      @keyframes fadeIn {
+        0% {opacity:1;}
+        100% {opacity:0;}
+      }
+      
+      @-moz-keyframes fadeIn {
+        0% {opacity:1;}
+        100% {opacity:0;}
+      }
+      
+      @-webkit-keyframes fadeIn {
+        0% {opacity:1;}
+        100% {opacity:0;}
+      }
+      
+      @-o-keyframes fadeIn {
+        0% {opacity:1;}
+        100% {opacity:0;}
+      }
+      
+      @-ms-keyframes fadeIn {
+        0% {opacity:1;}
+        100% {opacity:0;}
+      }
+ 
+
 
   .miss{
   background-color: grey;
+}
+
+.hit-miss {
+position: absolute;
+z-index: 7;
+margin-left: 60%;
+margin-top: -15px;
+font-size: 1.2rem;
+font-weight: 900;
+}
+.hit-miss h2 {
+  background-color: rgb(255, 232, 232);
+}
+
+#gameover-screen{
+display: block;
+padding: 9% 26%;
+background: rgba(0,0,0,0.9);
+}
+
+#gameover-screen img{
+  margin-left: 2%;
+  margin-top: -37px;
+}
+
+#gameover-screen h1{
+color: rgb(251, 5, 5);
+font-size: 6rem;
+margin-bottom: 72px;
+background-color: rgba(94, 25, 25, 0.4);
+}
+
+#exit {
+  margin-top: 40px;
+  width: 166px;
+  height: 36px;
+  font-size: 1.2rem;
+  border-radius: 40px;
+  color: rgb(113, 78, 19);
+  font-weight: 500;
+}
+
+#exit:hover {
+background-color: rgb(203, 32, 32);
+color: silver;
+}
+
+.ask {
+background-color: white;
+padding: 1px;
+border-radius: 12px;
+background-color: rgba(56, 48, 6, 0.4);
+margin-right: -31px;
+margin-top: 36px;
+}
+
+.ask p {
+font-size: 2rem;
+font-weight: 510;
+color: whitesmoke;
+}
+
+
+.ask #exit{
+margin-left: 44px;
+margin-bottom: 17px;
+}
+
+.col-2R {
+  margin-top: 30px;
+  margin-left: -19%;
+  margin-bottom: 70px;
+  width: 135%;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 7px;
+  }
+
+.col-2R h2 {
+ color: white;
+ font-size: 3rem;
+}
+
+.col-2R h2 span {
+  color:  rgb(203, 69, 0);
+}
+
+.figures{
+  display: flex;
+  width: 700px;
+  height: 201px;
+  justify-content: center; 
+  margin-left: 16%;
+  margin-top: 50px;
+}
+
+
+.figures img {
+width: 188px;
+margin-right: 30px;
+width: 171px;
+height: 155px;
+margin-right: 28px;
+}
+
+.col-2R p {
+font-size: 1.3rem;
+background-color: rgba(242, 241, 239, 0.9);
+padding: 26px;
+font-family: -apple-system;
 }
